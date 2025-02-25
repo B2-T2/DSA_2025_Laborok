@@ -69,4 +69,13 @@ void deallocateMemoryForArray(int **dpArray);
  * @param end a leheto legnagyobb szam amivel randomizalhat
  */
 void fillWithRandomNumbers(int n, float *pArray, int start, int end);
+
+/**
+ *
+ * @param number A szam amit primszamtesztre kuldunk
+ * @return igaz vagy hamis az allitas
+ */
+bool isPrime(int number);
+
+
 #endif //FUNC_H_H

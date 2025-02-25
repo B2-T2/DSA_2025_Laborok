@@ -3,6 +3,8 @@
 //
 
 #include "func.h.h"
+
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -57,4 +59,11 @@ void fillWithRandomNumbers(int n, float *pArray, int start, int end) {
     for (int i = 0; i < n; i++) {
         pArray[i] =1/(float)(start+1+rand()%(end-start+1));
     }
+}
+
+bool isPrime(int number){
+    for (int i = 0; i < sqrt(number); i++) {
+        if (number % i == 0) {return false;}
+    }
+    return true;
 }

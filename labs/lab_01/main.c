@@ -11,7 +11,7 @@ int main(void) {
     fillWithRandomNumbers(n,t,0,100);
     printArray(n,t,"Ki.txt");
     printf("%f",min(t[0],t[n/2],t[n-1]));
-    free(t);
+    deallocateMemoryForArray(t);
     return 0;
 }
 
