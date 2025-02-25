@@ -1,18 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #include "func.h.h"
 
 int main(void) {
-    printf("%i\n",sum(1,2));
-    printf("%f\n",min(1.2,23,3.4));
-    int *p= allocateMemoryForArray1(12);
-    printf("\n");
-    int *t;
-    int x=2;
-    readArray(&x,&t,"Be.txt");
-    printArray(x,t,"Ki.txt");
-    deallocateMemoryForArray(&t);
-    deallocateMemoryForArray(&p);
+    int n;
+    scanf("%i",&n);
+    float *t = allocateMemoryForArray1(n);
+    fillWithRandomNumbers(n,t,0,100);
+    printArray(n,t,"Ki.txt");
+    printf("%f",min(t[0],t[n/2],t[n-1]));
+    free(t);
     return 0;
 }
 

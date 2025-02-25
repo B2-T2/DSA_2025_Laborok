@@ -5,6 +5,7 @@
 #include "func.h.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int sum(int a,int b) {
     return a+b;
@@ -16,8 +17,8 @@ float min(float a, float b, float c) {
     return c;
 }
 
-int* allocateMemoryForArray1(int n) {
-    int *arr= (int *) malloc(n * sizeof(int));
+float* allocateMemoryForArray1(int n) {
+    float *arr= (float *) malloc(n * sizeof(float));
     if (!arr){printf("Memory allocation error");exit(0);}
     return arr;
 }
@@ -40,14 +41,20 @@ void readArray(int *pn, int **dpArray, const char *input) {
     }
 }
 
-void printArray(int n, int *pArray, const char *output) {
+void printArray(int n, float *pArray, const char *output) {
     freopen(output, "w", stdout);
     for (int i = 0; i < n; i++) {
-        printf("%c", pArray[i]);
+        printf("%f ", pArray[i]);
     }
     freopen("CON", "w",stdout);
 }
 
 void deallocateMemoryForArray(int **dpArray) {
     free(*dpArray);
+}
+void fillWithRandomNumbers(int n, float *pArray, int start, int end) {
+    srand(time(NULL));
+    for (int i = 0; i < n; i++) {
+        pArray[i] =1/(float)(start+1+rand()%(end-start+1));
+    }
 }

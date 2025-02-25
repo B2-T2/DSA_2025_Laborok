@@ -28,7 +28,7 @@ float min(float a, float b, float c);
  * @param n tomb cellainak szama
  * @return a lefogalt tomb kezdocime
  */
-int* allocateMemoryForArray1(int n);
+float* allocateMemoryForArray1(int n);
 
 /**
  * Inkabb ne hasznald \n
@@ -53,11 +53,20 @@ void readArray(int *pn, int **dpArray, const char *input);
  * @param pArray pointer a tombre amibol ki kell irni
  * @param output a szoveg
  */
-void printArray(int n, int *pArray, const char *output);
+void printArray(int n, float *pArray, const char *output);
 
 /**
  * Felszabaditja a tombot
  * @param dpArray tomb cime (pointer) amit fel akarunk szabaditani
  */
 void deallocateMemoryForArray(int **dpArray);
+
+/**
+ * Random szammal tolti fel a tombot 2 tetszoleges ertek szerint
+ * @param n a tomb elemeinek szama
+ * @param pArray a tomb pointere
+ * @param start a szam amitol akarjuk a randomizalast
+ * @param end a leheto legnagyobb szam amivel randomizalhat
+ */
+void fillWithRandomNumbers(int n, float *pArray, int start, int end);
 #endif //FUNC_H_H
