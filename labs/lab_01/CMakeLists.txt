@@ -5,4 +5,6 @@ set(CMAKE_C_STANDARD 23)
 
 add_executable(lab_01 main.c
         func.h.c
-        func.h.h)
+        func.h.h
+        ../../courses/course_03/main.c
+        ../../courses/course_02/main.c)

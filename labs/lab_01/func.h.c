@@ -59,11 +59,12 @@ void fillWithRandomNumbers(int n, float *pArray, int start, int end) {
     for (int i = 0; i < n; i++) {
         pArray[i] =1/(float)(start+1+rand()%(end-start+1));
     }
-}
+
 
 bool isPrime(int number){
-    for (int i = 0; i < sqrt(number); i++) {
+    for (int i = 2; i < sqrt(number); i++) {
         if (number % i == 0) {return false;}
     }
     return true;
+}
 }
