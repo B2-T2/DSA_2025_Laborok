@@ -16,12 +16,12 @@ typedef struct {
     char Neptun[9];
     char Birthplace[25];
     Date_t dateofBirth;
-    float examresults;
     enum Gender gender;
+    float examresults;
 }Student_t;
 
 void readStudentDetails(Student_t *p_student);
-void displayStudentDetails(Student_t *p_student);
+char* getGender(enum Gender gender);
 
 /**
 * Reads all details of a student, student must be passed by reference

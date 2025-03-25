@@ -3,10 +3,10 @@
 #include "Student.h"
 
 int main(void) {
-
-Student_t student = {"Egy Ketto","ASD","Vasarhely",2005,8,11,7,1};
-readStudentDetails(&student);
-displayStudentDetails(&student);
+int n;
+    Student_t *t;
+    readAllStudentsDetails(&t,&n,"Be.txt");
+printAllStudents(t,n,"Ki.txt");
 
     return 0;
 }
