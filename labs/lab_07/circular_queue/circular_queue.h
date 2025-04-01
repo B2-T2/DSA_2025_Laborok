@@ -44,7 +44,7 @@ bool isEmpty(CircularQueue_t queue);
  * @param queue
  * @param item
  */
-void enqueue(CircularQueue_t* queue, int item);
+void enqueue(CircularQueue_t* queue, GLASS item);
 /**
  * Removes the first item from the queue
  * @param queue
@@ -61,9 +61,17 @@ void display(CircularQueue_t queue);
  * @param queue
  * @return the element in the front
  */
-int peek(CircularQueue_t queue);
-
+GLASS peek(CircularQueue_t queue);
+/**
+*
+*/
 void readOneGlass(GLASS *glass);
-void printOneGlass(GLASS glass);
+/**
+*
+*/
 char *getDescriptionType(enum Type type);
+/**
+*
+*/
+void printOneGlass(GLASS glass);
 #endif //CIRCULAR_QUEUE_H
