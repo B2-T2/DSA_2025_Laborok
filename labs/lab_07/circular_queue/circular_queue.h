@@ -74,4 +74,10 @@ char *getDescriptionType(enum Type type);
 *
 */
 void printOneGlass(GLASS glass);
+
+/**
+ *
+ * @return
+ */
+bool isRed(GLASS glass);
 #endif //CIRCULAR_QUEUE_H

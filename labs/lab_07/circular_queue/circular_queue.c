@@ -89,4 +89,7 @@ GLASS peek(CircularQueue_t queue) {
     }
     return queue.elements[queue.front];
 }
+bool isRed(GLASS glass) {
+
+}
 
