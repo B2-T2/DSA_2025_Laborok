@@ -41,8 +41,25 @@ void insertAtEnd(Node** head_ref, Barat new_data) {
     last->next = new_node;
 }
 void printList(Node* node) {
-    while (node != NULL) {
-        printf("%4d ", node->data);
+    while (node != NULL)
+    {
+        printf("%s;%d;%d;%d;%c;%d\n",
+    node->data.nev,
+    node->data.szuletesiDatum.ev,
+    node->data.szuletesiDatum.honap,
+    node->data.szuletesiDatum.nap,
+    node->data.nem,
+    node->data.bulizas);
         node = node->next;
+    }
+}
+
+void Vagyunkelegen(Node* node) {
+    int db=0;
+    while (node != NULL) {
+        if (node -> data.szuletesiDatum.ev -2025>=20) {
+
+        }
+        node = node -> next;
     }
 }
