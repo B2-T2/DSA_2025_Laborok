@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include "../headers/constants.h"
 
-Node *createNewNode(int newData) {
+Node *createNewNode(Konyv newData) {
     Node *newItem = (Node*) malloc(sizeof (Node));
     if(!newItem)
     {
@@ -19,19 +19,25 @@ Node *createNewNode(int newData) {
     return newItem;
 }
 
-Node *insertLeft(Node *root, int newData) {
+Node *insertLeft(Node *root, Konyv newData) {
     root->left = createNewNode(newData);
     return root->left;
 }
 
-Node *insertRight(Node *root, int newData) {
+Node *insertRight(Node *root, Konyv newData) {
     root->right= createNewNode(newData);
     return root->right;
 }
 
+void kolcsonzes(Node *root) {
+    if (root == NULL) return;
+    inorderTraversal(root);
+
+}
+
 void preorderTraversal(Node *root) {
     if(root == NULL) return;
-    printf("%d ", root->info);
+    printf("%s ", root->info);
     preorderTraversal(root->left);
     preorderTraversal(root->right);
 }
@@ -39,7 +45,7 @@ void preorderTraversal(Node *root) {
 void inorderTraversal(Node *root) {
     if(root == NULL) return;
     inorderTraversal(root->left);
-    printf("%d ", root->info);
+    printf("%s ", root->info);
     inorderTraversal(root->right);
 }
 
@@ -48,7 +54,7 @@ void postorderTraversal(Node *root) {
     if(root == NULL) return;
     postorderTraversal(root->left);
     postorderTraversal(root->right);
-    printf("%d ", root->info);
+    printf("%s ", root->info);
 }
 
 void destroyBinaryTree(Node **root) {
@@ -58,4 +64,10 @@ void destroyBinaryTree(Node **root) {
         free(*root);
         *root = NULL;
     }
+}
+
+
+void readOneBookFromFile(FILE*f,Konyv b) {
+
+    fscanf(f,"%[^\n] %[^\n] %d %b",b.title,b.szerzo,&b.kiadasiEv,b.kolcson);
 }

@@ -4,35 +4,48 @@
 
 #ifndef BINARYTREE_BINARY_TREE_H
 #define BINARYTREE_BINARY_TREE_H
+#include <stdio.h>
 
 
-
+typedef struct Konyv {
+    char title[101];
+    char szerzo[101];
+    int kiadasiEv;
+    bool kolcson;
+}Konyv;
 
 typedef struct Node{
-    Barat info;
+    Konyv info;
     struct Node *left, *right;
 }Node;
+static const Konyv UresKonyv={"","",0,0};
 
 /**
  * Allocate memory for a new node
  * @param newData
  * @return the allocated node item
  */
-Node *createNewNode(int newData);
+Node *createNewNode(Konyv newData);
 /**
  * Insert a new node to the left of the root
  * @param root
  * @param newData
  * @return pointer to the inserted node
  */
-Node *insertLeft(Node *root, int newData);
+Node *insertLeft(Node *root, Konyv newData);
 /**
  * Insert a new node to the right of the root
  * @param root
  * @param newData
  * @return pointer to the inserted node
  */
-Node *insertRight(Node *root, int newData);
+Node *insertRight(Node *root, Konyv newData);
+
+/**
+ *
+ * @param root
+ */
+void kolcsonzes(Node *root);
 /**
  * ROOT-LEFT-RIGHT order of traversal
  * @param root
@@ -57,5 +70,8 @@ void postorderTraversal(Node *root);
  * @param root
  */
 void destroyBinaryTree(Node **root);
+
+
+void readOneBookFromFile(FILE*f,Konyv b);
 
 #endif //BINARYTREE_BINARY_TREE_H
